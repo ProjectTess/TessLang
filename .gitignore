@@ -1,0 +1,9 @@
+.build
+.extern
+.idea
+cmake-build-debug
+
+.build/**
+.extern/**
+.idea/**
+cmake-build-debug/**

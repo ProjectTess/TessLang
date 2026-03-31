@@ -1,0 +1,83 @@
+# +++++++ Base Style +++++++
+BasedOnStyle: LLVM
+
+# +++++++ Indents +++++++
+IndentWidth: 4
+PPIndentWidth: -1
+ContinuationIndentWidth: 2
+BracedInitializerIndentWidth: 2
+ConstructorInitializerIndentWidth: 2
+IndentPPDirectives: BeforeHash
+IndentAccessModifiers: true
+IndentCaseBlocks: true
+IndentCaseLabels: true
+IndentExportBlock: true
+IndentExternBlock: Indent
+IndentGotoLabels: true
+IndentRequiresClause: true
+NamespaceIndentation: All
+IndentWrappedFunctionNames: true
+LambdaBodyIndentation: Signature
+RequiresExpressionIndentation: OuterScope
+
+# +++++++ Line & Column Settings +++++++
+ColumnLimit: 90
+UseTab: Never
+AllowShortIfStatementsOnASingleLine: Never
+UseCRLF: false
+SeparateDefinitionBlocks: Never
+KeepEmptyLines:
+  AtStartOfFile: false
+  AtEndOfFile: false
+  AtStartOfBlock: false
+MaxEmptyLinesToKeep: 1
+
+# +++++++ Alignment Settings +++++++
+AlignConsecutiveMacros: Consecutive
+AlignTrailingComments: true
+AlignOperands: AlignAfterOperator
+AlignEscapedNewlines: LeftWithLastLine
+AlignAfterOpenBracket: Align
+DerivePointerAlignment: true
+PointerAlignment: Left
+
+# +++++++ Spaces Settings +++++++
+SpacesBeforeTrailingComments: 3
+SpaceBeforeCpp11BracedList: true
+SpaceBeforeRangeBasedForLoopColon: false
+SpaceBeforeInheritanceColon: false
+SpaceBeforeCtorInitializerColon: false
+SpaceAfterCStyleCast: true
+SpaceBeforeSquareBrackets: false
+SpaceBeforeParens: Never
+SpacesInSquareBrackets: true
+SpacesInParentheses: false
+SpacesInCStyleCastParentheses: false
+SpacesInConditionalStatement: false
+SpacesInContainerLiterals: true
+
+# +++++++ Access Modifier Settings +++++++
+AccessModifierOffset: 0
+EmptyLineBeforeAccessModifier: Always
+EmptyLineAfterAccessModifier: Never
+
+# +++++++ Namespaces +++++++
+BreakConstructorInitializers: AfterColon
+WrapNamespaceBodyWithEmptyLines: Always
+
+# +++++++ Sort Settings for Includes/Usings +++++++
+SortIncludes:
+  Enabled: true
+  IgnoreCase: false
+  IgnoreExtension: false
+SortUsingDeclarations: LexicographicNumeric
+
+# +++++++ C++11+ Style Settings +++++++
+Cpp11BracedListStyle: false
+
+# +++++++ Penalties +++++++
+PenaltyIndentedWhitespace: 1000
+
+# +++++++ Line Breaks +++++++
+BreakBeforeBraces: Allman
+BreakBeforeBinaryOperators: None

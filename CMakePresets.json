@@ -1,0 +1,345 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "base",
+      "binaryDir": "${sourceDir}/.build/out/${presetName}",
+      "installDir": "${sourceDir}/.build/install/${presetName}",
+      "generator": "Ninja",
+      "hidden": true
+    },
+    {
+      "inherits": "base",
+      "name": "win-base",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe"
+      },
+      "condition": {
+        "lhs": "${hostSystemName}",
+        "type": "equals",
+        "rhs": "Windows"
+      }
+    },
+    {
+      "inherits": "base",
+      "name": "linux-base",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      },
+      "condition": {
+        "lhs": "${hostSystemName}",
+        "type": "equals",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "inherits": "linux-base",
+      "name": "android-base",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_SYSTEM_NAME": "Android"
+      },
+      "condition": {
+        "lhs": "${hostSystemName}",
+        "type": "equals",
+        "rhs": "Android"
+      }
+    },
+    {
+      "name": "i686-debug",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "architecture": {
+        "value": "x86",
+        "strategy": "external"
+      }
+    },
+    {
+      "name": "x64-debug",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      }
+    },
+    {
+      "name": "arm-debug",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "architecture": {
+        "value": "arm",
+        "strategy": "external"
+      }
+    },
+    {
+      "name": "arm64-debug",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "architecture": {
+        "value": "arm64",
+        "strategy": "external"
+      }
+    },
+    {
+      "inherits": "i686-debug",
+      "name": "i686-release",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "inherits": "x64-debug",
+      "name": "x64-release",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "inherits": "arm-debug",
+      "name": "arm-release",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "inherits": "arm64-debug",
+      "name": "arm64-release",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "inherits": [
+        "win-base",
+        "i686-debug"
+      ],
+      "name": "win-i686-debug",
+      "displayName": "Windows Debug Build (X86 32-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "win-base",
+        "x64-debug"
+      ],
+      "name": "win-x64-debug",
+      "displayName": "Windows Debug Build (X86 64-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "win-base",
+        "i686-release"
+      ],
+      "name": "win-i686-release",
+      "displayName": "Windows Release Build (X86 32-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "win-base",
+        "x64-release"
+      ],
+      "name": "win-x64-release",
+      "displayName": "Windows Release Build (X86 64-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "linux-base",
+        "i686-debug"
+      ],
+      "name": "linux-i686-debug",
+      "displayName": "Linux Debug Build (X86 32-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "linux-base",
+        "x64-debug"
+      ],
+      "name": "linux-x64-debug",
+      "displayName": "Linux Debug Build (X86 64-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "linux-base",
+        "i686-release"
+      ],
+      "name": "linux-i686-release",
+      "displayName": "Linux Release Build (X86 32-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "linux-base",
+        "x64-release"
+      ],
+      "name": "linux-x64-release",
+      "displayName": "Linux Release Build (X86 64-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "android-base",
+        "i686-debug"
+      ],
+      "name": "android-i686-debug",
+      "displayName": "Android Debug Build (X86 32-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "android-base",
+        "x64-debug"
+      ],
+      "name": "android-x64-debug",
+      "displayName": "Android Debug Build (X86 64-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "android-base",
+        "i686-release"
+      ],
+      "name": "android-i686-release",
+      "displayName": "Android Release Build (X86 32-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "android-base",
+        "x64-release"
+      ],
+      "name": "android-x64-release",
+      "displayName": "Android Release Build (X86 64-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "win-base",
+        "arm-debug"
+      ],
+      "name": "win-arm-debug",
+      "displayName": "Windows Debug Build (ARM 32-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "win-base",
+        "arm64-debug"
+      ],
+      "name": "win-arm64-debug",
+      "displayName": "Windows Debug Build (ARM 64-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "win-base",
+        "arm-release"
+      ],
+      "name": "win-arm-release",
+      "displayName": "Windows Release Build (ARM 32-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "win-base",
+        "arm64-release"
+      ],
+      "name": "win-arm64-release",
+      "displayName": "Windows Release Build (ARM 64-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "linux-base",
+        "arm-debug"
+      ],
+      "name": "linux-arm-debug",
+      "displayName": "Linux Debug Build (ARM 32-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "linux-base",
+        "arm64-debug"
+      ],
+      "name": "linux-arm64-debug",
+      "displayName": "Linux Debug Build (ARM 64-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "linux-base",
+        "arm-release"
+      ],
+      "name": "linux-arm-release",
+      "displayName": "Linux Release Build (ARM 32-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "linux-base",
+        "arm64-release"
+      ],
+      "name": "linux-arm64-release",
+      "displayName": "Linux Release Build (ARM 64-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "android-base",
+        "arm-debug"
+      ],
+      "name": "android-arm-debug",
+      "displayName": "Android Debug Build (ARM 32-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "android-base",
+        "arm64-debug"
+      ],
+      "name": "android-arm64-debug",
+      "displayName": "Android Debug Build (ARM 64-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "android-base",
+        "arm-release"
+      ],
+      "name": "android-arm-release",
+      "displayName": "Android Release Build (ARM 32-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "android-base",
+        "arm64-release"
+      ],
+      "name": "android-arm64-release",
+      "displayName": "Android Release Build (ARM 64-bit)",
+      "hidden": false
+    }
+  ]
+}
