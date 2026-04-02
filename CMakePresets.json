@@ -37,6 +37,20 @@
       }
     },
     {
+      "inherits": "base",
+      "name": "darwin-base",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      },
+      "condition": {
+        "lhs": "${hostSystemName}",
+        "type": "equals",
+        "rhs": "Darwin"
+      }
+    },
+    {
       "inherits": "linux-base",
       "name": "android-base",
       "hidden": true,
@@ -199,6 +213,24 @@
     },
     {
       "inherits": [
+        "darwin-base",
+        "x64-debug"
+      ],
+      "name": "darwin-x64-debug",
+      "displayName": "macOS Debug Build (Intel Processor)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "darwin-base",
+        "x64-release"
+      ],
+      "name": "darwin-x64-release",
+      "displayName": "macOS Release Build (Intel Processor)",
+      "hidden": false
+    },
+    {
+      "inherits": [
         "android-base",
         "i686-debug"
       ],
@@ -303,6 +335,24 @@
       ],
       "name": "linux-arm64-release",
       "displayName": "Linux Release Build (ARM 64-bit)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "darwin-base",
+        "arm64-debug"
+      ],
+      "name": "darwin-arm64-debug",
+      "displayName": "macOS Debug Build (Apple Silicon)",
+      "hidden": false
+    },
+    {
+      "inherits": [
+        "darwin-base",
+        "arm64-release"
+      ],
+      "name": "darwin-arm64-release",
+      "displayName": "macOS Release Build (Apple Silicon)",
       "hidden": false
     },
     {
