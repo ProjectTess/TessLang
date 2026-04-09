@@ -21,15 +21,11 @@ LambdaBodyIndentation: Signature
 RequiresExpressionIndentation: OuterScope
 
 # +++++++ Line & Column Settings +++++++
-ColumnLimit: 120
+ColumnLimit: 100
 UseTab: Never
 AllowShortIfStatementsOnASingleLine: Never
 UseCRLF: false
-SeparateDefinitionBlocks: Never
-KeepEmptyLines:
-  AtStartOfFile: false
-  AtEndOfFile: false
-  AtStartOfBlock: false
+SeparateDefinitionBlocks: Always
 MaxEmptyLinesToKeep: 1
 
 # +++++++ Alignment Settings +++++++
@@ -55,6 +51,10 @@ SpacesInParentheses: false
 SpacesInCStyleCastParentheses: false
 SpacesInConditionalStatement: false
 SpacesInContainerLiterals: true
+SpacesInAngles: Never
+SpacesInParens: Never
+SpaceInEmptyBraces: Block
+SpaceAfterTemplateKeyword: false
 
 # +++++++ Access Modifier Settings +++++++
 AccessModifierOffset: 0
@@ -78,14 +78,29 @@ Cpp11BracedListStyle: false
 # +++++++ Penalties +++++++
 PenaltyIndentedWhitespace: 1000
 
+# +++++++ Style +++++++
+BinPackParameters: OnePerLine
+PackConstructorInitializers: Never
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCompoundRequirementOnASingleLine: true
+AllowShortNamespacesOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortLambdasOnASingleLine: Empty
+AllowShortLoopsOnASingleLine: false
+
 # +++++++ Line Breaks +++++++
 BreakBeforeBraces: Allman
 BreakBeforeBinaryOperators: NonAssignment
-BreakBeforeTernaryOperators: true
-BreakInheritanceList: AfterColon
+BreakBeforeTernaryOperators: false
+BreakInheritanceList: AfterComma
 BreakBeforeTemplateCloser: true
 BreakBeforeConceptDeclarations: Always
 BreakArrays: true
-BreakBinaryOperations: OnePerLine
+BreakBinaryOperations: Never
 BreakConstructorInitializers: AfterColon
 BreakAfterAttributes: Always
+BreakAdjacentStringLiterals: true
+BreakFunctionDefinitionParameters: false
+BreakTemplateDeclarations: Yes
