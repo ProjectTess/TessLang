@@ -5,28 +5,44 @@
 #ifndef TESSLANG_TOKEN_HXX
 #define TESSLANG_TOKEN_HXX
 
+#include <tess/lexer/TokenPosition.hxx>
 #include <tess/lexer/TokenType.hxx>
 
 namespace tess
 {
-    namespace lexer
+  namespace lexer
+  {
+    namespace token
     {
-        class Token
-        {
-            private:
-                const TokenType _type;
-                const std::pair<size_t, size_t> _lines, _pos;
 
-            public:
-                Token(TokenType type, std::pair<size_t, size_t> lines,
-                      std::pair<size_t, size_t> pos);
-                ~Token();
+      class Token
+      {
+        private:
+          TokenType __type;
+          TokenPosition __pos;
 
-                TokenType type() const;
-                std::pair<size_t, size_t> lines() const;
-                std::pair<size_t, size_t> pos() const;
-        };
-    }
-}
+        public:
+          Token(TokenType type, TokenPosition pos);
+          ~Token() noexcept;
 
-#endif //TESSLANG_TOKEN_HXX
+          TokenType type() const;
+          TokenPosition pos() const;
+
+          std::string toString() const;
+
+          bool operator==(const Token& other) const
+          {
+            return this->type() == other.type() && this->pos() == other.pos();
+          }
+
+          bool operator!=(const Token& other) const
+          {
+            return !(*this == other);
+          }
+      };
+
+    }   // namespace token
+  }   // namespace lexer
+}   // namespace tess
+
+#endif   // TESSLANG_TOKEN_HXX
