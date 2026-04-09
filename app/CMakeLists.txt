@@ -20,5 +20,5 @@ add_executable(
 # ========= Linking =========
 target_link_libraries(
         "tess"
-        PRIVATE "tess-core" # "tess-compiler" "tess-interpreter" "tess-runtime"
+        PRIVATE "tess-core" # "tess-compiler" "tess-runtime"
 )

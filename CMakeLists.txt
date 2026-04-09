@@ -54,5 +54,5 @@ add_subdirectory("app/")
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     enable_testing()
-    add_subdirectory("tests/")
+    add_subdirectory("unit-tests/")
 endif ()
